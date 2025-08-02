@@ -1,0 +1,20 @@
+.container {
+    background-color: red;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    height: 500px;
+}
+
+.vertical-center {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.horizontal-center {
+    margin: 0 auto;
+}
