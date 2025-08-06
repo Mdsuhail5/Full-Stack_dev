@@ -1,0 +1,11 @@
+const value = "Hello World"
+console.log(value.length)
+console.log(value.indexOf("o"))
+console.log(value.lastIndexOf("o"))
+console.log(value.slice(2, 7))
+console.log(value.split(" "))
+console.log(value.toUpperCase())
+console.log(value.toLowerCase())
+console.log(value.substring(0, 5))
+console.log(value.replace("World", "Javascript"))
+console.log(value.trim())
