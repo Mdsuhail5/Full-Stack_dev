@@ -1,0 +1,26 @@
+<html>
+<script>
+    function sum() {
+        const a = document.getElementById('a').value;
+        const b = document.getElementById('b').value;
+
+        const element = document.getElementById('final sum');
+        element.innerHTML = parseInt(a) + parseInt(b);
+        fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b).then(function (response) {
+            return response.text()
+        }).then(function (ans) {
+            document.getElementById('final sum').innerHTML = ans;
+        });
+    }
+</script>
+
+<body>
+    <input id="a" type="text" placeholder="First number">
+    <br></br>
+    <input id="b" type="text" placeholder="Second number">
+    <br></br>
+    <button type="submit" onclick="sum()">Calculate sum</button><br></br>
+    <div id="final sum"></div>
+</body>
+
+</html>
