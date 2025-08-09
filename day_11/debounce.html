@@ -1,0 +1,23 @@
+<html>
+<script>
+    function sum() {
+        const a = document.getElementById('a').value;
+        const b = document.getElementById('b').value;
+        clearTimeout();
+        setTimeout(function sum() {
+            let sum = a + b;
+            document.getElementById('final sum').innerHTML = sum;
+        }, 1000)
+    }
+</script>
+
+<body>
+    <input id="a" type="text" placeholder="First number">
+    <br></br>
+    <input id="b" type="text" placeholder="Second number">
+    <br></br>
+    <button type="submit" onclick="sum()">Calculate sum</button><br></br>
+    <div id="final sum"></div>
+</body>
+
+</html>
