@@ -6,8 +6,8 @@ const { User, Course } = require("../db");
 // User Routes
 router.post('/signup', async (req, res) => {
     // Implement user signup logic
-    const username = req.query.username;
-    const password = req.query.password;
+    const username = req.body.username;
+    const password = req.body.password;
 
     await User.create({
         username: username,
@@ -22,26 +22,43 @@ router.post('/signup', async (req, res) => {
 router.get('/courses', (req, res) => {
     // Implement listing all courses logic
     Course.find({}).then(function (response) {
-        Course: response,
+        res.json({
+            courses: response
+        });
     })
 });
 
-router.post('/courses/:courseId', userMiddleware, (req, res) => {
+router.post('/courses/:courseId', userMiddleware, async (req, res) => {
     // Implement course purchase logic
-    const new_course = await Course.create({
-        title,
-        description,
-        price,
-        imagelink
-    })
-    console.log(new_course);
+    const courseId = req.params.courseId;
+    const username = req.headers.username;
+    await User.updateOne({
+        username: username
+    }, {
+        "$push": {
+            purchasedCourses: courseId
+        }
+    });
     res.json({
-        msg: 'Course created successfully', courseId: new_course._id,
+        msg: "Purchase Complete!"
     })
+
 });
 
-router.get('/purchasedCourses', userMiddleware, (req, res) => {
+router.get('/purchasedCourses', userMiddleware, async (req, res) => {
     // Implement fetching purchased courses logic
+    const user = await User.findOne({
+        username: req.headers.username
+    });
+    console.log(user.purchasedCourses)
+    const courses = await Course.find({
+        _id: {
+            "$in": user.purchasedCourses
+        }
+    });
+    res.json({
+        courses: courses
+    })
 
 });
 
