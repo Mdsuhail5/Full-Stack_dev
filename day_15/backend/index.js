@@ -3,8 +3,10 @@
 const { createTodo, updateTodo } = require("./types")
 const { todo } = require("./db");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
+app.use(cors());
 app.use(express.json())
 app.post('/todo', async function (req, res) {
     const createpayload = req.body;
@@ -43,7 +45,7 @@ app.put('/completed', async function (req, res) {
         })
         return;
     }
-    await todo.update({
+    await todo.updateOne({
         _id: req.body.id
     }, {
         completed: true,
@@ -54,4 +56,6 @@ app.put('/completed', async function (req, res) {
     })
 });
 
-app.listen(port = 3000);
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+});
