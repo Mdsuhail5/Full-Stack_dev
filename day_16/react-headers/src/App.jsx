@@ -1,23 +1,35 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [title, setTitle] = useState(
+    "My name is harkirat"
+  )
+
+  function updateTitle() {
+    setTitle("My name is " + Math.random());
+  }
 
   return (
     <div>
-      <Header title="Aryan"></Header>
+      <button onClick={updateTitle}>Update the title</button>
+      <Header title={title}></Header>
       <Header title="rayan"></Header>
+      <Header title="rayan"></Header>
+      <Header title="rayan"></Header>
+      <Header title="rayan"></Header>
+      <Header title="rayan"></Header>
+
     </div>
   )
 }
 
-function Header(props) {
+const Header = memo(function (props) {
   return <div>
     {props.title}
   </div>
+})
 
-}
 export default App
