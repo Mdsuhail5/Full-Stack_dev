@@ -4,32 +4,31 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [title, setTitle] = useState(
-    "My name is harkirat"
-  )
+  return <div>
 
-  function updateTitle() {
-    setTitle("My name is " + Math.random());
-  }
+    {/* can write like this by creating a text component and rendring the content into the CardWrapper, not widely used
+    <CardWrapper innerComponent={<TextComponent></TextComponent>}></CardWrapper>
+    <CardWrapper innerComponent={<TextComponent />} /> 
 
-  return (
-    <div>
-      <button onClick={updateTitle}>Update the title</button>
-      <Header title={title}></Header>
-      <Header title="rayan"></Header>
-      <Header title="rayan"></Header>
-      <Header title="rayan"></Header>
-      <Header title="rayan"></Header>
-      <Header title="rayan"></Header>
-
-    </div>
-  )
+    real way to write the CardWrapper*/}
+    <CardWrapper>hi there, how are you?</CardWrapper>
+    <CardWrapper>hi there, how are you?</CardWrapper>
+  </div>
 }
 
-const Header = memo(function (props) {
-  return <div>
-    {props.title}
+function CardWrapper({ children }) {
+  return <div style={{ border: '2px solid black', padding: 20 }}>
+    {children}
   </div>
-})
-
+}
+// function TextComponent() {
+//   return <div>
+//     hi there
+//   </div>
+// }
+// function CardWrapper({ innerComponent }) {
+//   return <div style={{ border: '2px solid black', padding: 20 }}>
+//     {innerComponent}
+//   </div>
+// }
 export default App
