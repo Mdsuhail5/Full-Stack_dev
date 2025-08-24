@@ -1,34 +1,35 @@
-import { useState, memo } from 'react'
+import { useState, memo, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  const [Todos, setTodos] = useState(0)
+
+  useEffect(() => {
+    setInterval(() => {
+      fetch("")
+        .then(async function (res) {
+          const json = await res.json();
+          setTodos(json.todos);
+        })
+    }, 1000)
+  }, [])
+
   return <div>
-
-    {/* can write like this by creating a text component and rendring the content into the CardWrapper, not widely used
-    <CardWrapper innerComponent={<TextComponent></TextComponent>}></CardWrapper>
-    <CardWrapper innerComponent={<TextComponent />} /> 
-
-    real way to write the CardWrapper*/}
-    <CardWrapper>hi there, how are you?</CardWrapper>
-    <CardWrapper>hi there, how are you?</CardWrapper>
+    {Todos.map(todo => <Todo key={todo.id} title={todo.title} description={todo.description} />)}
   </div>
 }
 
-function CardWrapper({ children }) {
-  return <div style={{ border: '2px solid black', padding: 20 }}>
-    {children}
+function Todo({ title, description }) {
+  return <div>
+    <h1>
+      {title}
+    </h1>
+    <h4>
+      {description}
+    </h4>
   </div>
 }
-// function TextComponent() {
-//   return <div>
-//     hi there
-//   </div>
-// }
-// function CardWrapper({ innerComponent }) {
-//   return <div style={{ border: '2px solid black', padding: 20 }}>
-//     {innerComponent}
-//   </div>
-// }
+
 export default App
