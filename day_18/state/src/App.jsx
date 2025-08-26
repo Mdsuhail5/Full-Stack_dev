@@ -6,7 +6,9 @@ import './App.css'
 function App() {
   const [bank, setBank] = useState({})
   const [exchange, setExchange] = useState({})
+
   console.log("this is rendering")
+
   useEffect(() => {
     setTimeout(() => {
       setBank({ income: 100 });
