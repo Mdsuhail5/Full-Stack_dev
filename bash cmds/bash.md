@@ -9,5 +9,5 @@ Commands for linux terminal (bash terminal)
 8. mv -> move file or folder        (mv filename foldername)
 9. cp -> copy files and folder      (cp filename foldername)  to copy fld to another fld  (cp -r foldername foldername)
 10. npm -> node package manager (gives all the lib available in node) 
-11. git
-12. node
+11. git  ->version control system
+12. node   ->nodejs
