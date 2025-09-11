@@ -21,11 +21,11 @@ export const VideoCardHorizontal = ({ video }: { video: Video }) => {
                 {video.description}
             </div>
             <div className="flex">
-                <div className={"text-gray-400 text-xs font-normal	pr-2	"}>
+                <div className={"text-gray-400 text-xs font-normal	pr-2"}>
                     {video.viewCount}
                 </div>
-                <div className={"text-gray-400 text-xs font-normal		"}>
-                    • {video.timestamp}
+                <div className={"text-gray-400 text-xs font-normal"}>
+                    {video.timestamp}
                 </div>
             </div>
         </div>
