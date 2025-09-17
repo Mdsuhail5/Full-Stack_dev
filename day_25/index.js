@@ -1,6 +1,0 @@
-
-function main(params) {
-
-}
-
-main()
