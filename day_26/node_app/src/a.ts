@@ -1,5 +1,3 @@
-import set = require("mongoose");
-import mongoose = require("mongoose");
 
 let x: number = 1;
 console.log(x);
@@ -27,7 +25,7 @@ function isLegal(age: number): boolean {
 let y = isLegal(20);
 console.log(y);
 
-
+//how to give type of a fuction to another function
 function runAfter1sec(fn: () => void) {
     setTimeout(fn, 1000);
 }
@@ -35,3 +33,9 @@ function runAfter1sec(fn: () => void) {
 runAfter1sec(function () {
     console.log("1 sec passed");
 });
+
+//we learnt
+//1. how to give type to a variable
+//2. how to give type to a function parameter
+//3. how to give type to a function return type
+//4. how to give type of a function to another function
