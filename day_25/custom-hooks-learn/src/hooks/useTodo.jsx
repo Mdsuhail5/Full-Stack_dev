@@ -1,4 +1,5 @@
-
+//  Auto refreshing hook
+// What if you want to keep polling the backend every n seconds? n needs to be passed in as an input to the hook
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
