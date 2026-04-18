@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11ElevenLabs Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body
+    style="margin: 0;padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+    <div style="display: flex;flex-direction: column;align-items: center;min-height: 100vh;">
+        <div style="font-weight:bold;font-family: Roboto; padding: 50px; text-align: center;">
+            <img src="elevenlabs-logo-black.svg" alt="11ElevenLabs" width="90px" />
+        </div>
+        <div style="display: flex;justify-content: center;flex-direction: column;align-items: center;flex: 1;">
+            <b style="font-size:28px;margin-bottom: 20px;font-family: 'Inter', sans-serif; font-weight: 700;">Create
+                an account</b>
+            <button
+                style=" display: flex;align-items: center;justify-content: center; width: 300px;padding: 10px ;background-color: white;border-radius: 10px;border:1px solid #EBEBED;">
+                <img src="download.png" alt="google-logo" width="20px" style="margin-right:auto;" /><span
+                    style="margin-right: auto;">Sign up with
+                    Google</span></button>
+            <hr style="width:300px;border-top:0.5px solid #eeeeee;margin: 20px 0;">
+            <label style="align-self: flex-start; margin-left: 10px;">Email</label>
+            <input type="email"
+                style=" margin: 10px;width: 280px;border-radius: 10px;border:1px solid #EBEBED;padding: 10px;" />
+            <label style="align-self: flex-start; margin-left: 10px;">Password</label>
+
+            <div style="position: relative; display: inline-block;">
+                <input type="password" id="passwordInput"
+                    style="margin: 10px;width: 250px;border-radius: 10px;border:1px solid #EBEBED;padding: 10px; padding-right: 40px;" />
+                <img src="e.png" alt="toggle password" onclick="togglePassword()"
+                    style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; width: 20px; height: 20px;" />
+            </div>
+
+
+            <button
+                style="margin: 10px; width: 300px;padding: 10px 30px;border-radius: 10px;border:1px solid #EBEBED;background-color: #A6A7B0;color: white;">Sign
+                up</button>
+            <script>
+                function togglePassword() {
+                    const passwordInput = document.getElementById('passwordInput');
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                    } else {
+                        passwordInput.type = 'password';
+                    }
+                }
+            </script>
+            <span>
+                Already registered? <a href="/" style="color: black;"><u>Sign in</u></a>
+            </span>
+
+        </div>
+        <div
+            style="width:100%; color: #7c7d86;background-color: #EBEBED;display: flex; justify-content: center;padding: 20px;">
+            By continuing, you agree to our &nbsp;<u>Terms of Services</u>&nbsp;and&nbsp;<u>Privacy Policy</u>.
+        </div>
+
+</body>
+
+</html>
